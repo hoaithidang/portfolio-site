@@ -85,19 +85,51 @@ a.globalFooterCard, div.globalFooterCard {
 
 .intro-bar a {
     font-weight: 600;
-    transition: 0.4s all ease-in;
-    -webkit-transition: 0.4s all ease-in;
-    -moz-transition: 0.4s all ease-in;
-    -o-transition: 0.4s all ease-in;
-    transform: translateY(6px);
-    -webkit-transform: translateY(6px);
-    -moz-transform: translateY(6px);
-    -o-transform: translateY(6px);
-		line-height:80px;
+		display: inline-block;
+	 position: relative;
+	 padding-bottom: 3px;
+	 margin-top:20px;
+		margin-bottom:0px;
 }
 
 .intro-bar a:hover {
-	  text-decoration: line-through;
+ color: #fa6156;
+ text-decoration: none;
+}
+
+.intro-bar a:before{
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 3px;
+	width: 0;
+	transition: width 0s ease, background .5s ease;
+}
+
+.intro-bar a:after{
+	content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background: #fa6156;
+    transition: width .5s ease;
+}
+
+.intro-bar a:hover:before {
+	width: 100%;
+    background: #fa6156;
+    transition: width .5s ease;
+}
+
+.intro-bar a:hover:after {
+	width: 100%;
+	    background: transparent;
+	    transition: all 0s ease;
 }
 
 .about {
